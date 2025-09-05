@@ -3,6 +3,7 @@ import os
 import json
 from nextcord.ext import commands, tasks
 from nextcord.ext import tasks
+from nextcord import Interaction, SlashOption
 import asyncio
 import datetime
 from flask import Flask
