@@ -31,7 +31,9 @@ GUILD_IDS = []  # 테스트할 서버 ID 넣으면 빠른 등록 가능
 @bot.event
 async def on_ready():
     print(f"✅ 로그인됨: {bot.user}")
-
+    
+# ────────────────────────────────────────────────
+# ✅ 디도스 공격 방지
 active_commands = {}
 
 def prevent_overlap(func):
@@ -227,7 +229,8 @@ async def 핑(
 
     await interaction.response.send_message(embed=embed)
 
-# ------------------ 타임아웃 ------------------
+# ────────────────────────────────────────────────
+# ✅ /타임아웃 명령어어
 @bot.slash_command(name="타임아웃", description="굴라그로 보내기", guild_ids=GUILD_IDS)
 async def timeout(
     interaction: Interaction,
@@ -266,7 +269,8 @@ async def timeout(
     except Exception as e:
         await interaction.response.send_message(f"❌ 오류 발생: {e}", ephemeral=True)
 
-# ------------------ 추방 ------------------
+# ────────────────────────────────────────────────
+# ✅ /추방 명령어
 @bot.slash_command(name="추방", description="나가리 시키기", guild_ids=GUILD_IDS)
 async def kick(
     interaction: Interaction,
@@ -284,7 +288,8 @@ async def kick(
     except Exception as e:
         await interaction.response.send_message(f"❌ 오류 발생: {e}", ephemeral=True)
 
-# ------------------ 차단 ------------------
+# ────────────────────────────────────────────────
+# ✅ /차단 명령어
 @bot.slash_command(name="차단", description="숙청 시키기", guild_ids=GUILD_IDS)
 async def ban(
     interaction: Interaction,
