@@ -20,8 +20,11 @@ from ping3 import ping
 import functools
 
 intents = nextcord.Intents.default()
+intents.message_content = True
+intents.guilds = True
 intents.members = True
-bot = commands.Bot(intents=intents)
+
+bot = commands.Bot(command_prefix="!", intents=intents)
 
 GUILD_IDS = []  # 테스트할 서버 ID 넣으면 빠른 등록 가능
 
